@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var txtPais: UILabel!
+    @IBOutlet weak var txtNombrePais: UITextField!
+    
+    @IBOutlet weak var agregarNuevoPais: UIButton!
+    
+    @IBAction func agregarPais(_ sender: Any) {
+        let nuevoPais = txtNombrePais.text!
+        arrayPaises.append(nuevoPais)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -22,6 +32,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return  arrayPaises[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        txtPais.text = arrayPaises[row]
+    }
     
     var arrayPaises = ["Peru", "Brasil", "Argentina", "Uruguay", "Venezuela", "Costa Rica"]
     
