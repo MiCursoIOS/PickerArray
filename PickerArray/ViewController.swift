@@ -15,9 +15,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var agregarNuevoPais: UIButton!
     
+    @IBOutlet weak var miPicker: UIPickerView!
     @IBAction func agregarPais(_ sender: Any) {
         let nuevoPais = txtNombrePais.text!
-        arrayPaises.append(nuevoPais)
+        arrayPaises.insert(nuevoPais, at: 0)
+        miPicker.reloadAllComponents()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -34,12 +36,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtPais.text = arrayPaises[row]
+        txtPais.isHidden = false
     }
     
     var arrayPaises = ["Peru", "Brasil", "Argentina", "Uruguay", "Venezuela", "Costa Rica"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtPais.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 

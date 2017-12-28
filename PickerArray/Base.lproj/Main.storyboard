@@ -53,6 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="miPicker" destination="z1K-4U-inN" id="SeJ-c4-Mri"/>
                         <outlet property="txtNombrePais" destination="COl-Q4-1xM" id="def-Rn-4BU"/>
                         <outlet property="txtPais" destination="ZUj-V8-HFG" id="fKU-Kk-Zlf"/>
                     </connections>
